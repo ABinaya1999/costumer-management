@@ -19,7 +19,7 @@
         <![endif]-->
 
 
-{% include "nav.html" %}
+{% include "record/nav.html" %}
 
 {% if messages %}
 {% for message in messages%}
@@ -30,7 +30,7 @@
 {%endfor%}
 {%endif%}
 
-
+<a href={%url 'auth'%}>Login</a>
 {% block content%}
 
 {% endblock %}

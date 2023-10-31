@@ -8,7 +8,7 @@ from record.models import Record
 def home(request):
     record = Record.objects.all()
     
-    return render(request,'index.html',{'record':record})
+    return render(request,'record/index.html',{'record':record})
 
 
 def add_record(request):
@@ -20,7 +20,7 @@ def add_record(request):
                 messages.success(request, 'Record add successfully!')     
                 return redirect('home')    
         
-    return render(request,"add_record.html",{'forms':forms})
+    return render(request,"record/add_record.html",{'forms':forms})
 
 def delete_record(request,pk):
     delete_record=Record.objects.get(id=pk)
@@ -36,6 +36,6 @@ def update_record(request,pk):
         form.save()
         messages.success(request, 'Record updated successfully!')
         return redirect('home')
-    return render(request,'update.html',{'form':form})
+    return render(request,'record/update.html',{'form':form})
 
 # Create your views here.
