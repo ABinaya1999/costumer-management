@@ -15,15 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from crmm import views
+from django.urls import path,include
+
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("",views.home,name='home'),
-    path("add_record/",views.add_record,name='add_record'),
-    path("delete_record/<int:pk>",views.delete_record,name='delete_record'),
-    path("update_record/<int:pk>",views.update_record,name='update_record')
+    path("",include('record.urls')),
+
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
