@@ -15,7 +15,7 @@
       {% for r in record%}
       <tr>
         <th scope="row">{{forloop.counter}}</th>
-        <td>{{r.first_name}} {{r.last_name}}</td>
+        <td>{{r.first_name}} {{r.middle_name}} {{r.last_name}}</td>
         <td>{{r.email}}</td>
         <td>{{r.address}}</td>
        <td><img src="{{r.profile_imagee.url}}" alt="image_lost" width=200></td>

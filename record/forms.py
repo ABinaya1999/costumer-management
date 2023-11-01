@@ -3,6 +3,7 @@ from .models import Record
 
 class addrecord(forms.ModelForm):
     first_name=forms.CharField(label='first_name',widget=forms.TextInput(attrs={'class':'form-control'}))
+    middle_name=forms.CharField(label='middle_name',widget=forms.TextInput(attrs={'class':'form-control'}))
     last_name=forms.CharField(label='last_name',widget=forms.TextInput(attrs={'class':'form-control'}))
     email=forms.CharField(label='email',widget=forms.TextInput(attrs={'class':'form-control'}))
     address=forms.CharField(label='address',widget=forms.TextInput(attrs={'class':'form-control'}))
@@ -10,4 +11,4 @@ class addrecord(forms.ModelForm):
     
     class Meta:
         model= Record
-        fields = ('first_name','last_name','email','address','profile_imagee')
+        fields = ('first_name','middle_name','last_name','email','address','profile_imagee')
