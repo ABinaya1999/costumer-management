@@ -6,6 +6,7 @@ from django.db import models
 class Record(models.Model):
     
     first_name=models.CharField(max_length=70)
+    middle_name=models.CharField(max_length=70,blank=True)
     last_name=models.CharField(max_length=70)
     email=models.CharField(max_length=70)
     address=models.CharField(max_length=70)
